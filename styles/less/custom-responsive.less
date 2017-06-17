@@ -1,0 +1,67 @@
+// wy20130717: a copy of responsive.less with @import custom-variables.less instead of variables.less;
+
+// Responsive.less
+// For phone and tablet devices
+// -------------------------------------------------------------
+
+
+// REPEAT VARIABLES & MIXINS
+// -------------------------
+// Required since we compile the responsive stuff separately
+
+@import "custom-variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap2.3.2/mixins.less";
+
+
+// RESPONSIVE CLASSES
+// ------------------
+
+@import "bootstrap2.3.2/responsive-utilities.less";
+
+
+// MEDIA QUERIES
+// ------------------
+
+// Large desktops
+@import "bootstrap2.3.2/responsive-1200px-min.less";
+
+// Tablets to regular desktops
+@import "bootstrap2.3.2/responsive-768px-979px.less";
+
+
+// Phones to portrait tablets and narrow desktops
+@import "bootstrap2.3.2/responsive-767px-max.less";
+
+
+// RESPONSIVE NAVBAR
+// ------------------
+
+// From 767px and below, show a button to toggle navbar contents
+@import "bootstrap2.3.2/responsive-navbar.less";
+
+
+// CUSTOM DESKTOP STYLES
+@media (min-width: 768px) {
+	.navbar-fixed-top .navbar-inner {
+		margin-left:10%;
+		margin-right:15%;
+	}
+
+}
+
+// CUSTOM MOBILE STYLES
+@media (max-width: 767px) {
+	.navbar-fixed-top .navbar-inner {
+		margin-left:10px;
+		margin-right:10px;
+	}
+
+	// hide the "View Mobile Version" icon
+	.navbar-fixed-top {
+		.icon-mobile {
+			display:none;
+		}
+	}
+
+
+}

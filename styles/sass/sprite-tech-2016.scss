@@ -1,0 +1,130 @@
+.sprite-tech-container {
+    text-align: center;
+    opacity:0.9; 
+}
+
+@mixin stitches-sprite-tech($x: 0, $y: 0, $width: 0, $height: 0) {
+    background-position: $x $y;
+    width: $width;
+    height: $height;
+}
+ 
+.sprite-tech {
+    background-image: url("../img/about/tech/sprite-tech-2016.png");
+    background-repeat: no-repeat;
+    margin: 50px 35px;
+    vertical-align: middle;
+    display: inline-block;
+
+    &.sprite-tech-android-apple-phone {
+        @include stitches-sprite-tech(-5px, -5px, 176px, 130px);
+    }
+
+    &.sprite-tech-angularjs {
+        @include stitches-sprite-tech(-191px, -5px, 263px, 70px);
+    }
+
+    &.sprite-tech-apple-android-phone {
+        @include stitches-sprite-tech(-464px, -5px, 110px, 70px);
+    }
+
+    &.sprite-tech-boostrap {
+        @include stitches-sprite-tech(-584px, -5px, 210px, 70px);
+    }
+
+    &.sprite-tech-cross-platform-devices {
+        @include stitches-sprite-tech(-191px, -85px, 394px, 154px);
+    }
+
+    &.sprite-tech-express {
+        @include stitches-sprite-tech(-5px, -249px, 315px, 70px);
+    }
+
+    &.sprite-tech-foundation {
+        @include stitches-sprite-tech(-595px, -85px, 193px, 70px);
+    }
+
+    &.sprite-tech-git {
+        @include stitches-sprite-tech(-5px, -165px, 168px, 70px);
+    }
+
+    &.sprite-tech-google-analytics {
+        @include stitches-sprite-tech(-595px, -165px, 153px, 70px);
+    }
+
+    &.sprite-tech-html5-css-javascript-logos {
+        @include stitches-sprite-tech(-595px, -245px, 180px, 70px);
+    }
+
+    &.sprite-tech-java {
+        @include stitches-sprite-tech(-330px, -325px, 70px, 70px);
+    }
+
+    &.sprite-tech-jquery {
+        @include stitches-sprite-tech(-410px, -325px, 287px, 70px);
+    }
+
+    &.sprite-tech-json {
+        @include stitches-sprite-tech(-5px, -405px, 140px, 70px);
+    }
+
+    &.sprite-tech-less {
+        @include stitches-sprite-tech(-155px, -405px, 172px, 70px);
+    }
+
+    &.sprite-tech-meteor-logo {
+        @include stitches-sprite-tech(-337px, -405px, 296px, 70px);
+    }
+
+    &.sprite-tech-mongodb {
+        @include stitches-sprite-tech(-5px, -485px, 238px, 70px);
+    }
+
+    &.sprite-tech-multi-device {
+        @include stitches-sprite-tech(-253px, -485px, 324px, 174px);
+    }
+
+    &.sprite-tech-nodejs {
+        @include stitches-sprite-tech(-5px, -669px, 263px, 70px);
+    }
+
+    &.sprite-tech-npm {
+        @include stitches-sprite-tech(-643px, -405px, 117px, 70px);
+    }
+
+    &.sprite-tech-pagespeed {
+        @include stitches-sprite-tech(-707px, -325px, 59px, 70px);
+    }
+
+    &.sprite-tech-phone-brush-pencil {
+        @include stitches-sprite-tech(-587px, -485px, 128px, 128px);
+    }
+
+    &.sprite-tech-phonegap-cordova {
+        @include stitches-sprite-tech(-587px, -623px, 143px, 70px);
+    }
+
+    &.sprite-tech-phonegap-cross-platform {
+        @include stitches-sprite-tech(-278px, -703px, 197px, 70px);
+    }
+
+    &.sprite-tech-photoshop {
+        @include stitches-sprite-tech(-804px, -5px, 150px, 150px);
+    }
+
+    &.sprite-tech-responsive-design {
+        @include stitches-sprite-tech(-485px, -703px, 437px, 249px);
+    }
+
+    &.sprite-tech-sass {
+        @include stitches-sprite-tech(-758px, -165px, 93px, 70px);
+    }
+
+    &.sprite-tech-sketch {
+        @include stitches-sprite-tech(-785px, -245px, 100px, 100px);
+    }
+
+    &.sprite-tech-uxpin {
+        @include stitches-sprite-tech(-776px, -355px, 100px, 100px);
+    }
+}

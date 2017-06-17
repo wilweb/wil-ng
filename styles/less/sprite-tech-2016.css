@@ -1,0 +1,146 @@
+.sprite-tech-container {
+  text-align: center;
+  opacity: 0.9;
+}
+.sprite-tech {
+  background-image: url("../img/about/tech/sprite-tech-2016.png");
+  background-repeat: no-repeat;
+  margin: 50px 35px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.sprite-tech.sprite-tech-android-apple-phone {
+  background-position: -5px -5px;
+  width: 95px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-angularjs {
+  background-position: -110px -5px;
+  width: 263px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-apple-android-phone {
+  background-position: -383px -5px;
+  width: 110px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-boostrap {
+  background-position: -503px -5px;
+  width: 210px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-cross-platform-devices {
+  background-position: -5px -85px;
+  width: 394px;
+  height: 154px;
+}
+.sprite-tech.sprite-tech-express {
+  background-position: -409px -85px;
+  width: 315px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-foundation {
+  background-position: -409px -165px;
+  width: 193px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-git {
+  background-position: -409px -245px;
+  width: 168px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-google-analytics {
+  background-position: -587px -245px;
+  width: 153px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-html5-css-javascript-logos {
+  background-position: -5px -325px;
+  width: 180px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-java {
+  background-position: -612px -165px;
+  width: 70px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-jquery {
+  background-position: -195px -325px;
+  width: 287px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-json {
+  background-position: -492px -325px;
+  width: 140px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-less {
+  background-position: -5px -405px;
+  width: 172px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-meteor-logo {
+  background-position: -187px -405px;
+  width: 296px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-mongodb {
+  background-position: -493px -405px;
+  width: 238px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-multi-device {
+  background-position: -5px -485px;
+  width: 324px;
+  height: 174px;
+}
+.sprite-tech.sprite-tech-nodejs {
+  background-position: -339px -485px;
+  width: 263px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-npm {
+  background-position: -612px -485px;
+  width: 117px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-pagespeed {
+  background-position: -692px -165px;
+  width: 59px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-phonegap-cordova {
+  background-position: -339px -565px;
+  width: 143px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-phonegap-cross-platform {
+  background-position: -492px -565px;
+  width: 197px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-photoshop {
+  background-position: -642px -325px;
+  width: 70px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-responsive-design {
+  background-position: -761px -5px;
+  width: 437px;
+  height: 249px;
+}
+.sprite-tech.sprite-tech-sass {
+  background-position: -750px -264px;
+  width: 93px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-sketch {
+  background-position: -853px -264px;
+  width: 70px;
+  height: 70px;
+}
+.sprite-tech.sprite-tech-uxpin {
+  background-position: -933px -264px;
+  width: 70px;
+  height: 70px;
+}

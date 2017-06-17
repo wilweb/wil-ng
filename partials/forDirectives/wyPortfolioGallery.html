@@ -1,0 +1,104 @@
+<!-- BEGIN CONTROLS -->
+<nav class="controls just">
+	<div class="group" id="Filters">
+
+	  <!-- DESKTOP VERSION -->
+	  <!-- Must add .wf class to control, otherwise flickering is visible-->
+		<ul class="mix_filter wf mixitup-controls-desktop">
+			<li class="active" data-filter="all" data-dimension="category"><span>All</span></li>			
+
+			<li data-filter="ibm" data-dimension="category"><span>IBM</span></li>
+			<li data-filter="mobile" data-dimension="category"><span>Mobile Phone/Tablet</span></li>
+			<li data-filter="bcaa" data-dimension="category"><span>BCAA</span></li>
+
+			<li data-filter="ja" data-dimension="category"><span>Joseph Abboud</span></li>
+			<li data-filter="tmw" data-dimension="category"><span>Men's Wearhouse</span></li>
+
+			<li data-filter="graphics" data-dimension="category"><span>Photoshop/Illustrator</span></li>
+		</ul>
+
+		<!-- MOBILE VERSION -->
+		<div class="drop_down wf mixitup-controls-mobile">
+			<span class="drop_down_label">Show</span>
+			<ul class="anim250">
+				<!-- NOTE: for mobile version, do NOT put spans around the li's below-->
+				<li class="active" data-filter="all" data-dimension="category">All</li>
+
+				<li data-filter="ibm" data-dimension="category">IBM</li>
+				<li data-filter="mobile" data-dimension="category">Mobile Phone/Tab</li>
+				<li data-filter="bcaa" data-dimension="category">BCAA</li>
+
+				<li data-filter="ja" data-dimension="category">Joseph Abboud</li>
+				<li data-filter="tmw" data-dimension="category">Men's Wearhouse</li>
+
+				<li data-filter="graphics" data-dimension="category">Photoshop/Illustrator</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="group" id="Sorts">
+		<div class="button" id="ToGrid"><i></i></div>
+		<div class="button active" id="ToList"><i></i></div>
+	</div>
+
+	<div class="clear"></div>
+</nav>
+<!-- END CONTROLS -->
+
+
+<ul id="myGrid" class="just">
+	<!-- "Table" header -->	
+	<div class="list_header">
+		<div class="meta name active desc">Project</div>
+		<div class="meta client">Company/Client</div>
+		<div class="meta type">Type</div>
+	</div>
+	
+	<!-- FAIL ELEMENT -->
+	<div class="fail_element anim250">Sorry &mdash; we could not find any items matching the selected criteria</div>
+
+  <!-- Porfolio Items -->
+  <!-- wy: the wy-ng-repeat-on-finish directive fires an event for 
+  		 		 the wy-portfolio-gallery directive after 
+  		 		 ng-repeat has rendered the last element.
+  -->
+  <span ng-repeat="project in portfolio.projects" wy-ng-repeat-on-finish>
+  <li class="mix {{project.category}} mix_all" data-name="{{project.name}}" data-area="47452.80">
+		<a class="fancybox" href="{{portfolio.imagePathFull}}{{project.image}}">
+		<div class="meta name">
+			<div class="img_wrapper">
+				<img ng-src="{{portfolio.imagePathThumb}}{{project.image}}" wy-fade-onload/>
+				<!--img src="{{portfolio.imagePathThumb}}{{project.image}}" onload="imgLoaded(this)"/-->
+			</div> 
+			
+			<div class="titles">
+				<h2>{{project.name}}</h2>
+				<p><em>{{project.description}}</em></p>
+			</div>
+		</div>
+		</a>
+
+		<div class="meta category display-none">
+			<p>graphics</p>
+		</div>
+		<div class="meta client">
+			<p>{{project.client}}</p>
+		</div>
+		<div class="meta type">
+			<p>{{project.type}}<br><br>
+			<a href="http://{{project.href}}">{{project.href}}</a></p>
+		</div>
+		<!--div class="meta tech">
+			<ul>
+				<li ng-repeat="tech in project.techs">{{tech.label}}</li>
+			</ul>
+		</div>
+		<div class="meta tools">
+			<ul>
+				<li ng-repeat="tool in project.tools">{{tool.label}}</li>
+			</ul>
+		</div-->
+	</li>
+	</span>
+</ul>

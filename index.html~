@@ -1,0 +1,210 @@
+<!doctype html>
+<!-- For IE support, add id="ng-app" to the root element in conjunction with ng-app attribute. -->
+<!-- Reference: http://docs.angularjs.org/guide/ie -->
+<html> <!-- lang="en" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myApp"-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Wil</title>
+
+  <!-- wy: IE9 script for mixitup; DO NOT delete, leave commented out-->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+
+  <!--link rel="stylesheet" href="styles/css/app-from-less.css"/-->
+  <link rel="stylesheet" href="styles/css/app-from-sass.css"/>
+  
+  <!--The Google Analytics tracking script-->
+  <!--script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-43099033-1', 'wilyan.com');
+    ga('send', 'pageview');
+  </script-->
+
+</head>
+<body>
+
+  <noscript>
+      <div class="noscript">
+         <p>JavaScript is off.<br/>Please enable JavaScript and refresh your<br/>browsers to view this site.</p>
+         <p class="instructions">            
+            <br/>Click 
+            <a href="//www.enable-javascript.com" target="_blank">here</a>
+            for instructions to enable Javascript on your web browser
+         </p>
+     </div>
+  </noscript> 
+  
+  <!-- GTM DataLayer -->
+  <!--script>dataLayer = [];</script-->
+
+  <!-- Google Tag Manager -->
+  <!--noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TCT7F6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TCT7F6');</script-->
+  <!-- End Google Tag Manager -->
+
+  <header>
+  
+  <!-- Fixed navbar -->
+  <section class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+          <ul class="nav">
+            <li><wy-btn-mobile></wy-btn-mobile></li>
+          </ul>
+          <ul class="nav pull-right">
+            <!--li><a class="btn1-class" href="#" name="button1" 
+                  onclick="dataLayer.push({
+                  'tripCategory': 'skiing',
+                  'tripLocation': 'Switzerland'});">btn1</a>
+            </li>
+            <li><a href="#" name="button2" 
+                  onclick="console.log('Push Scuba');dataLayer.push({
+                  'tripCategory': 'scuba',
+                  'tripLocation': 'Costa Rica'});">btn2</a>
+            </li-->
+            <li><a title="Google+" href="http://plus.google.com/104400951164562791779?prsrc=3" class="icon icon-gplus-circled"></a></li>
+            <li><a title="Pinterest" href="http://pinterest.com/wildotnet/" class="icon icon-pinterest-circled"></a></li>
+            <!--li><a title="GitHub" href="http://github.com/wilweb/wil-ng" class="icon icon-github-circled"></a></li-->
+          </ul>
+    </div>
+  </section>
+
+  <!-- Simple menu without collapsible navbar for tablet and desktop devices. -->
+  <section ng-controller="NavbarAngularuiCtrl" class="navbar navbar-float hidden-phone"> 
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li>
+          <a href="#/home" ng-click="scrollUp();">
+            <h3>Home »</h3>
+            <p>View Home Page</p>
+          </a>
+        </li>
+        <li>
+          <a href="#/portfolio" ng-click="desktopScrollDown();">
+            <h3>Portfolio »</h3>
+            <p>Sample of My Work</p>
+          </a>
+        </li>
+        <li>
+          <a href="#/photos" ng-click="desktopScrollDown();">
+            <h3>Photos »</h3>
+            <p>Personal Photography</p>
+          </a>
+        </li>
+        <li>
+          <a href="#/about" ng-click="desktopScrollDown();">
+            <h3>About »</h3>
+            <p>Info and Contact</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Collapsible Navbar for phone devices. -->
+  <section ng-controller="NavbarAngularuiCtrl" class="visible-phone"> 
+    <div class="navbar navbar-collapsable">
+      <div class="navbar-inner">
+         <div class="container">
+            <!-- Note: set the initial collapsed state and change it when clicking -->
+            <a ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" class="btn btn-navbar">
+               <span class="icon-line"></span>
+               <span class="icon-line"></span>
+               <span class="icon-line"></span>
+               <span class="icon-line"></span>
+            </a>
+            <a class="brand" ng-click="navCollapsed = !navCollapsed">Menu</a>
+
+            <ul class="nav social-media-links pull-right">
+              <li><a title="Google+" href="http://plus.google.com/104400951164562791779/posts" class="icon icon-gplus-circled"></a></li>
+              <li><a title="Pinterest" href="http://pinterest.com/wildotnet/" class="icon icon-pinterest-circled"></a></li>
+              <!--li><a title="GitHub" href="http://github.com/wilweb/wil-ng" class="icon icon-github-circled"></a></li-->
+            </ul>
+
+           <!-- Note: use "collapse" here. The original "data-" settings are not needed anymore. -->
+           <div collapse="navCollapsed" class="nav-collapse collapse navbar-responsive-collapse">
+            <ul class="nav">
+              <li>
+                <a href="#/home" ng-click="navCollapsed = !navCollapsed; scrollUp();">
+                  <h3>Home »</h3>
+                  <p>View Home Page</p>
+                </a>
+              </li>
+              <li>
+                <a href="#/portfolio" ng-click="navCollapsed = !navCollapsed; mobileScrollDown();">
+                  <h3>Portfolio »</h3>
+                  <p>Sample of My Work</p>
+                </a>
+              </li>
+              <li>
+                <a href="#/photos" ng-click="navCollapsed = !navCollapsed; mobileScrollDown();">
+                  <h3>Photos »</h3>
+                  <p>Personal Photography</p>
+                </a>
+              </li>
+              <li>
+                <a href="#/about" ng-click="navCollapsed = !navCollapsed; mobileScrollDown();">
+                  <h3>About »</h3>
+                  <p>Info and Contact<p>
+                </a>
+              </li>
+            </ul>
+
+           </div><!-- /.nav-collapse -->
+          </div> <!-- /.container -->
+     </div><!-- /navbar-inner -->
+   </div><!-- /navbar -->
+  </section>
+
+
+  <div class="background-splash">  
+    <img src="./img/wilng-responsive-screenshot.png">
+  </div>
+
+ 
+  <wy-splash id="branding"></wy-splash> 
+  
+ 
+  <div class="clear"></clear>
+
+</header>
+
+<section ng-view class="main-content"></section>
+
+<!--hide the footer on the homepage -->
+<footer >
+  <p>Copyright &copy; 2017  • Wil Mobile UI/UX Solutions</p>
+</footer>
+   
+  <!-- WY: Use for DEV - unminified version -->
+  <!--script data-main="js/main.js" src="js/lib/requirejs/require.min.js"></script-->
+
+  <!-- WY: Use for PROD - minified version -->
+  <script src="js/main-built.js"></script>
+
+
+  <!--script src="https://code.jquery.com/jquery-1.9.1.min.js"></script-->
+  <script type="text/javascript" >
+      //$( document ).ready(function() {
+          console.log( "wy document loaded (html)" );
+      //});
+  </script>
+
+
+
+
+
+</body>
+</html>

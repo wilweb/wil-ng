@@ -1,0 +1,112 @@
+/* Filterable Portfolio Stylesheet */
+
+
+/* Simple Reset
+------------------------------------------------------------ */
+html, body, div, h1, h2, ul, li, dl, dd, dt, p { margin: 0; padding: 0; }
+ul { list-style: none; }
+
+
+/* Import Fonts
+------------------------------------------------------------ */
+@import url(http://fonts.googleapis.com/css?family=Quattrocento);
+
+
+/* Custom Classes
+------------------------------------------------------------ */
+.group:after { visibility: hidden; display: block; content: ""; clear: both; height: 0; }
+* html .group { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+
+/* General Styles
+------------------------------------------------------------ */
+body { font-size: 87.5%; line-height: 1.5em; font-family: Georgia,"Times New Roman", Times, serif;  }
+
+#wrap { max-width: 940px; min-height: 900px; margin: 0 auto; padding: 1.5em 20px; overflow: hidden; background-color: #fff; border: 1px solid #ddd; -moz-box-shadow: 0 0 5px #ddd; -webkit-box-shadow: 0 0 5px #ddd; box-shadow: 0 0 5px #ddd; }
+
+h1, h2 { font-weight: normal; }
+h1 { font-family: 'Quattrocento', serif; font-size: 3em; line-height: 1em; text-transform: uppercase; text-align: center; border-top: 1px solid #000; padding-top: 1em; margin-bottom: 0.33333em; }
+h2 { font-size: 1.5em; line-height: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #aaa; margin-bottom: 0.5em; color: #444; }
+
+a { color: #444; text-decoration: underline; -moz-transition: 0.4s all linear; -webkit-transition: 0.4s all linear; -o-transition: 0.4s all linear; transition: 0.4s all linear; outline-color: #aaa; }
+a:hover { color: #4f0d4d; }
+
+.demo-top { margin-bottom: 0.35714em; padding-bottom: 0.5em; border-bottom: 3px solid #000; }
+.credits { font-family: 'Quattrocento', serif; font-size: 1.28571em; line-height: 1.16667em; text-align: center; color: #444; margin-bottom: 2.66667em; }
+.back-to-post { border-top: 1px solid #000; margin-bottom: 3em; }
+
+
+/* Filter */
+dl { margin-bottom: 3em; color: #777; }
+dt, dd { float: left; }
+dt { margin-right: 5px; }
+.filter {
+	margin-top: 2.5em;
+	margin-bottom: 2em;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.filter li { float: left; }
+.filter li:after { content: " • "; color:rgba(160, 206, 78,1); }
+.filter li:last-child:after { content: ""; }
+.filter a { 
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.1em;
+	margin: 0 0.55em 0 0.55em; 
+	padding-top:.5em;
+	padding-left:.7em;
+	padding-right:.7em;
+	color: #666; 
+	text-decoration: none; 
+
+}
+.filter li:first-child a {
+	margin-left: 0em;
+}
+.filter a:hover, .current a { color: #888; border-top: 2px solid rgba(160, 206, 78,1);}
+
+/* Portfolio Items */
+.portfolio li { 
+	float: left;
+	margin-right: 1.9em; 
+	margin-bottom: 2em; 
+	border: 1px solid #ccc; 
+	-moz-box-shadow: 0 5px 5px -3px #222; 
+	-webkit-box-shadow: 0 5px 5px -3px #222; 
+	box-shadow: -2px 2px 10px 2px #999; 
+}
+
+.portfolio li:nth-child(4n) { }
+.portfolio a { 
+	display: block; 
+	border: 3px solid #fff;  
+	text-decoration: none; 
+}
+.portfolio img { width:200px; height: 200px; display: block; border: 1px solid #ccc; }
+
+.portfolio img.desaturate { 
+	filter: grayscale(90%);
+	-webkit-filter: grayscale(90%); 
+	-moz-filter: grayscale(90%);
+	-ms-filter: grayscale(90%); 
+	-o-filter: grayscale(90%);
+	filter: url(desaturate.svg#greyscale);
+	filter: gray;
+}
+
+.portfolio img.sepia { 
+	filter: sepia(50%);
+	-webkit-filter: sepia(50%); 
+	-moz-filter: sepia(50%);
+	-ms-filter: sepia(50%); 
+	-o-filter: sepia(50%);
+	filter: url(sepia.svg#sepia);
+	filter: gray;
+}
+
+.portfolio img:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}

@@ -1,0 +1,65 @@
+// import all plugin less files
+@import "../../js/lib/angularui/ng-grid/ng-grid.less";
+@import "../../js/lib/tiled-gallery/tiled-gallery/tiled-gallery.less";
+@import "../../js/lib/fancybox/source/jquery.fancybox.less";  
+
+// IE9 support for mixitup plugin
+//  <!--[if lt IE 9]>
+//      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+//      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+//  <![endif]-->
+@import "../../js/lib/mixitup-1.5.4/mixitup.portfolio.wil.less";
+
+// my custom theme which also includes a customized versions of bootstrap.less and responsive.less
+@import "wil-theme.less"; 
+
+// my sprite css's
+@import "sprite-tech-2016.less"; 
+@import "sprite-client.less"; 
+  
+/* app css stylesheet */
+.menu { 
+  list-style: none;
+  border-bottom: 0.1em solid black; 
+  margin-bottom: 2em;
+  padding: 0 0 0.5em; 
+}  
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after { 
+  content: "]";    
+}
+
+.menu > li { 
+  display: inline; 
+}
+
+.menu > li:before { 
+  content: "|"; 
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before  {
+  content: "";
+  padding: 0; 
+}
+ 
+.view-css {
+  position: relative;
+  margin: 15px;
+  padding: 39px 19px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+} 
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 400px; 
+    height: 150px
+}

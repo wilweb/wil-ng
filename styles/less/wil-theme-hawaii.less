@@ -1,0 +1,755 @@
+// Created my-bootstrap-theme.less based on article at http://www.codeproject.com/Articles/594098/How-to-customize-Twitter-Bootstrap-to-fit-your-web
+
+@import "custom-bootstrap.less";
+@import "custom-responsive.less";
+
+// My bootstrap customizations here:;
+//	- change variable in custom-variables.less to override variables.less
+//  - add media queries in custom-responsive.les to override responsive.less
+//  - leave custom-bootsrap.less as is (all other customizations are implemented in this file.)
+
+
+// Fonts 
+// Fontello: icon-fonts 
+@font-face {
+  font-family: 'fontello_social_4';
+  src: url('../fonts/fontello_social_4.eot?80777785');
+  src: url('../fonts/fontello_social_4.eot?80777785#iefix') format('embedded-opentype'),
+       url('../fonts/fontello_social_4.woff?80777785') format('woff'),
+       url('../fonts/fontello_social_4.ttf?80777785') format('truetype'),
+       url('../fonts/fontello_social_4.svg?80777785#fontello_social_4') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+[class^="icon-"], [class*=" icon-"] {
+  font-family: "fontello_social_4";
+  font-style: normal;
+  font-weight: normal;
+  font-size:2em;
+  color:#666;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+ 
+  // For safety - reset parent styles, that can break glyph codes
+  font-variant: normal;
+  text-transform: none;
+}
+ 
+.icon-wordpress:before { content: '\e804'; } /* '' */
+.icon-github:before { content: '\e803'; } /* '' */
+.icon-github-circled:before { content: '\e808'; } /* '' */
+.icon-gplus-circled:before { content: '\e800'; } /* '' */
+.icon-pinterest-circled:before { content: '\e801'; } /* '' */
+.icon-blog:before { content: '\e805'; } /* '' */
+.icon-mobile:before { content: '\e806'; } /* '' */
+
+// Generarl styles
+.clear {
+	clear: both;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	min-width: 320px;
+	font-family: @serifFontFamily;
+	color: @grayOnWhite;
+	//background: url(../img/bg/mocha-grunge.jpg) repeat;
+
+	@media (max-width: 767px) {
+		padding-left:0;
+		padding-right:0;
+	}
+
+	header {
+		height: 100%;
+		background: url(../img/bg/splash.jpg) center center no-repeat;
+		background-size: 100%;
+		width: 100%;
+		box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);	
+
+		// relative header position with z-index higher than .main-content
+		// allows header box-shadow to float above .main-content
+		position:relative;	
+		z-index: 1000;		
+
+	    -moz-filter: contrast(110%) brightness(100%);
+	    -o-filter: contrast(110%) brightness(100%);
+	    -ms-filter: contrast(110%) brightness(100%);
+	    filter: contrast(110%) brightness(100%);
+		-webkit-filter: contrast(115%) brightness(110%);
+
+
+	}
+	.blur {
+		background: #000;
+		opacity: 0.5;
+		height: 100%;
+		width: 100%;
+
+		//height: 48%;
+		//width: 80%;
+		//left: 10%;
+		top: 0;
+		//float: left;
+
+		z-index: -1;
+
+		position: absolute;
+
+		filter: blur(1px);
+		-webkit-filter: blur(1px);
+		-moz-filter: blur(1px);
+		-o-filter: blur(1px);
+		-ms-filter: blur(1px);
+
+  		overflow: hidden;
+	}
+}
+
+.nav > li > a:focus {
+    outline:none;
+}
+
+// navbar styles
+.navbar {
+	box-shadow: 0 3px 20px rgba(0,0,0,0.5);
+	font-family: @serifFontFamily;
+
+	h3 {
+		margin:0;
+	}	
+
+	p {
+		margin: 0 0 5px 0;
+	}
+}
+
+@fixedNavbarBorderBottom: 6px;
+@fixedNavbarHeight: 45px + @fixedNavbarBorderBottom;
+.navbar-fixed-top {
+	position:fixed;
+	height: @fixedNavbarHeight;
+	min-height: @fixedNavbarHeight;
+	max-height: @fixedNavbarHeight;
+	opacity: 0.9;
+
+	min-width: 320px;
+	
+	border-bottom: @fixedNavbarBorderBottom solid @greenAccent;
+	background: #000;
+
+	@media (max-width: 767px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+	.navbar-inner {
+		height: @fixedNavbarHeight;
+		//margin-left:10%;
+		//margin-right:15%;
+		background: #000;	
+		border:none;
+		padding:0;
+	}
+
+	@iconFontWidth: 30px;
+	.nav > li > a {
+		width: @iconFontWidth;
+		height: @fixedNavbarHeight;
+		line-height: @fixedNavbarHeight;
+		padding:0;
+		margin:0 5px 0 5px;
+		color: @grayOnBlack;
+		text-shadow: none;
+
+		&.icon {
+			background-image: none;		// hide bootstrap glyphicons.
+		}
+
+		&.icon-mobile {
+			font-size: 32px;
+		}
+
+		&.icon:hover {
+			color: darken(@white, 40%);
+			text-shadow: none;
+			
+			-webkit-transition: 500ms linear 0s;
+			-moz-transition: 500ms linear 0s;
+			-o-transition: 500ms linear 0s;
+			transition: 500ms linear 0s;
+		}
+
+		&.active > h3,
+		&.active > p {
+			color: @grayOnBlack;
+		}
+	}
+}
+
+@floatNavbarHeight: 56px;
+@floatNavbarBottom: 15px;
+.navbar-float {
+	opacity:0.83;
+	position:absolute;
+	bottom: @floatNavbarBottom;
+	width:100%;
+	box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.8);
+	z-index: 1020;
+
+	.navbar-inner {
+		padding-left:10%;
+		padding-right:5%;
+		//background: url(../img/bg/bedge-grunge.jpg) repeat;
+	}
+
+	.nav {
+		width:100%; 
+
+		li {
+			width: 25%;
+
+			a {
+				padding:20px 0px;
+				color: @grayLight;
+				h3 {
+					font-size: 1.9em;
+				}
+				p {
+					font-size: 1.3em;
+				}
+			}
+		}
+
+		li a.active,
+		li a:hover {
+			color: lighten(@grayDark, 15%);
+			
+			h3 {
+				text-shadow: @greenGlow;
+			}
+
+			p {
+				text-shadow:none;
+			}
+		}
+	}
+}
+
+// add this class in /wil-home-tween/core.js to implement sticky nav-float bar on document scroll
+.navbar-float-sticky {
+	position: fixed;
+	top: @fixedNavbarHeight;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+
+	// height must equal total of navbar-fixed and navbar-float heights otherwise box-shadow is hidden
+	height: @fixedNavbarHeight + @floatNavbarHeight;
+}
+
+// .btn-navbar styles
+.navbar-collapsable {
+	position:fixed;
+	float:left;
+	top:0px;
+	left:0px;
+	box-shadow: none;
+	width:100%;
+	min-width: 320px;
+	z-index:10000;
+
+	.navbar-inner {
+		background: transparent;
+		border:none;
+		padding:0;
+
+		.icon-line {
+			border-top: 1.6px solid #cccccc;
+			display: block;
+			padding-bottom:4px;
+			margin:0;
+			height: 1px;
+			width:24px;
+		}
+	}
+	
+	.btn-navbar {
+	  float: left;
+	  max-height: 19px;
+	  padding: 6px 5px;
+	  margin: 9px 15px;
+		background: darken(@grayOnBlack, 2%);
+
+		&:hover{
+			background: lighten(@grayOnBlack, 5%);
+		}
+	}
+
+	.brand {
+		font-family: "Open Sans", sans-serif;
+		font-weight: normal;
+		color: @grayLight;
+		text-shadow: none;
+		padding: 16px 0;
+	}
+
+  .nav.social-media-links {
+  	margin-right: 10px;
+
+		@iconFontWidth: 30px;
+		li > a {
+			width: @iconFontWidth;
+			height: @fixedNavbarHeight;
+			line-height: @fixedNavbarHeight;
+			padding:0;
+			margin:0 5px 0 5px;
+
+			color: @grayOnBlack;
+			text-shadow: none;
+
+			&.icon {
+				background-image: none;		// hide bootstrap glyphicons.
+			}
+			&.icon-mobile {
+				font-size: 32px;
+			}
+
+			&.icon:hover {
+				color: darken(@white, 40%);
+				text-shadow: none;
+				
+				-webkit-transition: 500ms linear 0s;
+				-moz-transition: 500ms linear 0s;
+				-o-transition: 500ms linear 0s;
+				transition: 500ms linear 0s;
+			}
+
+			&.active > h3,
+			&.active > p {
+				color: @grayOnBlack;
+			}
+		}  // end: li > a
+	}
+
+	@navcollapseBackground: rgb(68, 68, 68);
+	.nav-collapse {
+		background-color: @navcollapseBackground;
+		margin-top:48px;
+
+		li {
+			padding: 2em 0;
+			width: 100%;
+			padding-top: 1.6em;
+			padding-bottom: 2.1em;
+			padding-left: 0em;
+			border-bottom: 1px solid #666;
+			text-align: center;
+		}
+
+		li a:hover {
+			color: white;
+			background-color: transparent;
+			border: none;
+		}
+
+		li.active a,
+		li.active a:hover {
+			color: rgba(160, 206, 78, 1);
+			background-color: @navcollapseBackground;
+			box-shadow: none;
+		}
+
+		h3, p {
+			text-shadow: none;
+		}
+
+		p {
+			font-size: 18px;
+			font-weight: normal;
+		}
+	}
+}
+
+// branding styles
+#branding {
+	// html, body, and header must also have height:100% so that #branding is equal to 100% of window height
+	height: 100% - 20%; //100% -51px; //100% - @fixedNavbarHeight - @footerHeight;
+	padding-top: 11%;
+	display:block;
+	overflow: hidden;
+	//margin-bottom: @floatNavbarHeight + @floatNavbarBottom;
+	//padding: 6% 0;
+
+
+
+	h1 {
+		font-family: @serifFontFamily;
+		text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+		font-size: 4.6em;
+		font-weight: normal;
+		margin: 0;
+		padding:0;
+		text-transform: none;
+		color:rgba(255,255,255,0.9);
+		line-height: 1em;
+		position:relative;
+		display:block;
+		border:none;
+	} 
+
+	h2 {
+		width:100%;
+		text-align:center;
+		font-family: @serifFontFamily;
+		font-size: 8em;
+		font-weight: normal;
+		margin:0;
+		margin-top:2%;
+		margin-bottom:2.5%;
+		padding:0;
+		color:#666;
+		text-shadow: 0 2px 1px #000;
+		line-height: .25em;
+		position:relative;
+		display:block;
+		border:none;
+	}
+
+	h3 {
+		width:100%;
+		margin:0 auto;
+		font-family: @serifFontFamily;
+		text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+		font-style: italic;
+		color:#dfdfdf;
+		font-weight: normal;
+		font-size: 1.6em;
+		line-height: 1em;
+		margin-bottom: 0.5em;
+	}
+
+	.subtitle {
+		display: inline-block; 
+		text-align:center;
+		position: relative;
+	}
+
+	.title-line {  
+		display: block; 
+		text-align:center;
+		position: relative;
+	}
+
+	#title-line4{
+		font-size:.8em;
+		color:#FF3;
+	}
+
+	#title-line5 { 
+		font-size:.4em;
+	}
+
+	.title-line span { 
+		display: inline-block; 
+		position: relative; 
+	}
+
+	#btn_screen {
+		position: relative;
+		z-index: 9999;
+	}
+
+	#btn_tweenTitle {
+		position: relative;
+		z-index: 9999;
+	}
+
+	@media (min-width:621px) and (max-width:767px) {
+		padding-top: 23%;
+
+		h1 span span{
+			font-size: 50px;
+		}
+
+		h3 {
+			width:90%;
+			padding: 0 10px;
+
+			span {
+				font-size: 18px;
+			}
+		}
+	}
+
+	@media (min-width:401px) and (max-width:620px) {
+		padding-top: 23%;
+
+		h1 span span{
+			font-size: 50px;
+		}
+
+		h3 {
+			width:70%;
+			padding: 0 10px;
+
+			span {
+				font-size: 18px;
+			}
+		}
+
+	}
+
+	@media (max-width:400px) {
+		padding-top: 35%;
+
+		h1 span span{
+			font-size: 40px;
+		}
+
+		h3 {
+			width:85%;
+			padding: 0 10px;
+
+			span {
+				font-size: 16px;
+			}
+		}
+
+		img.logo {
+			width: 100%;
+		}
+
+	}
+
+	@media (max-width:420px) {
+		padding-top: 15%;
+		overflow: hidden;
+
+		h1 span span{
+			font-size: 40px;
+		}
+
+		h3 {
+			width:85%;
+			padding: 0 10px;
+
+			span {
+				font-size: 16px;
+			}
+		}
+
+		img.logo {
+			width: 50%;
+		}
+
+	}
+
+}
+// end branding styles
+
+// main-content styles
+.main-content {
+
+  width:85%;
+  min-height: 100%;
+  margin: 0 auto;
+  padding:2% 3.5% 5% 3.5%;
+
+  background: rgb(255,255,255); /* Old browsers: just display white */
+  background: -moz-linear-gradient(top, rgb(255, 255, 220)  0%, rgba(255,255,255,1) 170px, rgba(255,255,255,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(255, 255, 220) ), color-stop(170px,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgb(255, 255, 220)  0%,rgba(255,255,255,1) 170px,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgb(255, 255, 220)  0%,rgba(255,255,255,1) 170px,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgb(255, 255, 220) 0%,rgba(255,255,255,1) 170px,rgba(255,255,255,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgb(255, 255, 220)  0%,rgba(255,255,255,1) 170px,rgba(255,255,255,1) 100%); /* W3C */
+
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
+
+  // relative .main-content position with z-index lower than header
+  // allows .main-content to float below header box-shadow.
+  position:relative;
+  z-index:900;
+
+  h1, h2, h3, h4, h5, h6 {
+  	font-family: @sansFontFamily;
+  	font-weight: 200;
+
+		padding-bottom: 0.5em;
+		border-bottom: 1px solid #aaa;
+		margin-bottom: 0.5em;
+  }
+
+  h2 {
+  	font-size: 1.8em;
+		margin-top: 1em;
+		text-align: center;
+  }
+
+  p {
+  	font-family: @serifFontFamily;
+  	font-size: 1.3em;
+  	font-style: normal;
+  	font-weight: normal;
+  }
+
+	@media (max-width:485px) {
+		h2 {
+			margin-top: 0.5em;
+			font-size: 1.2em;
+			font-weight: 400;
+			line-height: 1.5em;
+		}
+
+	}
+}
+
+// contact page styles
+.contact {
+	margin-top: 2.3em;
+
+	.panel1 {	
+		width: 65%;
+		float: left;
+
+		iframe {
+			border: 1px solid lighten(@greenAccent, 5%);
+			opacity:0.9;
+		}
+	}
+
+	.panel2 {
+		width: 31%;
+		float: left;
+		margin-left:4%;
+
+		form input,
+		form textarea {
+			//width:94%;
+		}
+
+		p.form-success {
+			//font-family: @sansFontFamily;
+			font-weight: 500;
+			font-style: italic;
+			color: darken(@grayLighter, 7%);
+			font-size: 1.7em;
+			line-height: 1em;
+			letter-spacing: 0.5px;
+			text-align: center;
+			margin-top: 50%;
+		}
+	}	
+
+	// below 768px, stack .panel1 and .pane12
+	@media (max-width: 767px) {
+
+		.panel1, 
+		.panel2 {
+			width:100%;
+		}
+
+		.panel2 {
+			margin-left:0%;
+
+			form input,
+			form textarea {
+				width:89.5%;
+			}
+
+			p.form-success {
+				margin-top: 2em;
+			}
+		}
+	}
+}
+
+// portfolio mixitup controls
+.mixitup-controls-desktop {
+	// From 851px and above, show 
+	@media (min-width: 851px) {
+		display:inline-block;
+	}
+
+	// From 850px and below, hide 
+	@media (max-width: 850px) {
+		display:none;
+	}
+}
+
+.mixitup-controls-mobile {
+	// From 851px and above, hide 
+	@media (min-width: 851px) {
+		display:none;
+	}
+
+	// From 850px and below, show 
+	@media (max-width: 850px) {
+		display:inline-block;
+	}
+
+}
+
+// form field validations
+.form-with-validation {
+	label {
+		margin-top:0.5em;
+		font-size: 1.3em;
+	}
+  input {
+    //display:inline;
+    //float:left;
+  }
+
+  input.ng-valid.ng-dirty {
+    color: @successText;
+    border-color:  @successText;
+  }
+  
+  input.ng-invalid.ng-dirty {
+    color: @errorText;
+    border-color:  @errorText;
+  }
+
+  img {
+  	vertical-align: top;
+  }
+  // valid form field: display checkbox to LEFT of field;
+  .form-field-valid {
+    margin-left: 10px;
+    display:inline-block;
+    padding-bottom:10px;
+  }
+
+  // invalid form field: display message BELOW field  
+  .form-field-invalid {
+    p {
+    	font-size: 1em;
+      color: @errorText;
+
+      &:last-child {
+				margin-bottom: 1.5em;
+      }
+    }
+  }
+
+}
+
+@footerHeight:25px;
+footer {
+	height: @footerHeight;
+	background-color: rgb(63, 63, 63);
+	padding-top: 3px;
+
+	p {
+		color: @grayLighter;
+		font-family: "Open Sans", sans-serif;
+		font-size: 12px;
+		text-align: center;
+	}
+}

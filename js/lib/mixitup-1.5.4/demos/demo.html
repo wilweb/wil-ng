@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=1"/>
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="template.css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="../js/jquery.mixitup.min.js"></script>
+		
+		
+		<script type="text/javascript">
+			// INSTANTIATE MIXITUP
+			$(function(){
+				$('#Grid').mixitup();
+			});
+		</script>
+		
+		<title>MixItUp Boilerplate Template</title>
+
+	</head>
+
+	<body>
+			
+			<h1><strong>MixItUp</strong> Boilerplate Template</h1>
+						
+			<!-- FILTER CONTROLS -->
+			<div class="controls">	
+				<h3>Filter Controls</h3>
+				<ul>
+					<li class="filter" data-filter="all">Show All</li>
+					<li class="filter" data-filter="category_1">Category 1</li>
+					<li class="filter" data-filter="category_2">Category 2</li>
+					<li class="filter" data-filter="category_3">Category 3</li>
+					<li class="filter" data-filter="category_3 category_1">Category 1 &amp; 3</li>
+				</ul>
+			</div>
+			
+			<!-- GRID -->
+			<ul id="Grid" class="wf">
+				<li class="mix category_1" data-cat="1">1</li>
+				<li class="mix category_3" data-cat="3">3</li>
+				<li class="mix category_2" data-cat="2">2</li>
+				<li class="mix category_3" data-cat="3">3</li>
+				<li class="mix category_2" data-cat="2">2</li>
+				<li class="mix category_1" data-cat="1">1</li>
+				<li class="gap"></li> <!-- "gap" elements fill in the gaps in justified grid -->
+			</ul>
+		
+	</body>
+</html>

@@ -1,0 +1,49 @@
+
+/* wy: wf class removes flickering */
+.wf{
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/*
+* MIXITUP Boilerplate Template Stylesheet
+*/
+
+
+
+.controls li.active{
+	font-weight: bold;
+}
+
+
+#Grid{
+	width: 640px;
+	text-align: justify;
+}
+
+#Grid:after{
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+
+#Grid .mix{
+	display: none;
+	opacity: 0;
+	width: 200px;
+	height: 200px;
+	vertical-align: top;
+	margin-bottom: 20px;
+	background: #ccc;
+	color: #fff;
+	
+	text-align: center;
+	line-height: 200px;
+}
+
+#Grid .gap{
+	display: inline-block;
+	width: 200px;
+}

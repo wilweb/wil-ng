@@ -1,0 +1,95 @@
+<h2>This Portfolio is Created Using...</h2>
+<div class="sprite-tech-container">
+	<i class="sprite-tech sprite-tech-android-apple-phone"></i>
+	<i class="sprite-tech sprite-tech-uxpin"></i>
+	<i class="sprite-tech sprite-tech-sketch"></i>
+	<i class="sprite-tech sprite-tech-photoshop"></i>
+	<br>
+	<i class="sprite-tech sprite-tech-angularjs"></i>
+	<i class="sprite-tech sprite-tech-cross-platform-devices"></i>
+	<br>
+	<i class="sprite-tech sprite-tech-html5-css-javascript-logos"></i>
+	<i class="sprite-tech sprite-tech-git"></i>
+	<i class="sprite-tech sprite-tech-sass"></i>
+	<i class="sprite-tech sprite-tech-jquery"></i>
+	<br>
+	<i class="sprite-tech sprite-tech-json"></i>
+	<i class="sprite-tech sprite-tech-multi-device"></i>
+	<i class="sprite-tech sprite-tech-java"></i>
+</div>
+<br>
+<br>
+
+    
+    
+    
+    
+
+
+<h2>I've Created UI/UX Frontends and Mobile Solutions For...</h2>
+<div class="sprite-client-container">
+	<i class="sprite-client sprite-client-bcaa"></i>
+	<i class="sprite-client sprite-client-ibm"></i>
+	<i class="sprite-client sprite-client-gm"></i>
+	<br>
+	<i class="sprite-client sprite-client-lcbo"></i>
+	<i class="sprite-client sprite-client-alberta_health"></i>
+	<i class="sprite-client sprite-client-zimt"></i>
+</div>
+<br>
+<br>
+<br>
+
+<h2>Contact Me</h2>
+<div class="contact">
+	<div class="panel1">
+      <iframe width="100%" height="410" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="//www.openstreetmap.org/export/embed.html?bbox=-123.10317993164064%2C49.18304987224775%2C-122.95761108398439%2C49.32198916635343&amp;layer=mapnik&amp;marker=49.2525684006494%2C-123.0303955078125"></iframe>
+      <!--		
+		<iframe width="100%" height="410" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/view?zoom=11&center=37.7749%2C-122.4194&key=AIzaSyA0ofVZNgWhOfMjHt2gJ-Kk8JnZ35-N5PI"></iframe>
+      -->
+		<!--br><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=6055+Nelson+Avenue,+Burnaby,+BC,+Canada&amp;aq=0&amp;oq=6055+nelson+a&amp;sll=37.0625,-95.677068&amp;sspn=43.983628,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=6055+Nelson+Ave,+Burnaby,+British+Columbia+V5H+4E7,+Canada&amp;t=m&amp;ll=49.245397,-123.075027&amp;spn=0.183785,0.411987&amp;z=11" style="color:#666;font-size:1.5emtext-align:left">View Larger Map</a></small-->
+	</div>
+
+	<div class="panel2">
+		<form name="myForm" novalidate class="form-with-validation">
+		  <label>Name:</label>
+			<input type="text" name="fName" required placeholder="Your name..." ng-model="fields.name">
+			<img class="form-field-valid" ng-show="myForm.fName.$valid && myForm.fName.$dirty" src="./img/checkmark-green.png" width="30px" height="30px">
+			<div class="form-field-invalid" ng-show="myForm.fName.$invalid && myForm.fName.$dirty" >
+			  <p>Please enter a your name.</p>
+			</div>
+
+		  <label>Email:</label>
+		  <input type="email" name="fEmail" required placeholder="you@company.com" ng-model="fields.email">
+			<img class="form-field-valid" ng-show="myForm.fEmail.$valid && myForm.fEmail.$dirty" src="./img/checkmark-green.png" width="30px" height="30px">
+		  <div class="form-field-invalid" ng-show="myForm.fEmail.$invalid && myForm.fEmail.$dirty" >
+			  <p>Please enter a valid email address.</p>
+			  <p>e.g. you@company.com </p>
+			</div>
+
+			<label>Phone:</label>
+		  <input type="text" name="fPhone" placeholder="(123) 456-7890 (optional)" ng-model="fields.phone" ng-pattern="/^([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})$/">
+			<img class="form-field-valid" ng-show="myForm.fPhone.$valid && myForm.fPhone.$dirty" src="./img/checkmark-green.png" width="30px" height="30px">
+			<div class="form-field-invalid" ng-show="myForm.fPhone.$invalid && myForm.fPhone.$dirty" >
+			  <p>Please enter a valid phone number.</p>
+			  <p>e.g. (123) 456-7890</p>
+			</div>
+
+		  <label>Comments:</label>
+			<textarea style="height:100px" name="fComments" required placeholder="Your comments..." ng-model="fields.comments" ng-minlength="2"></textarea>
+			<img class="form-field-valid" ng-show="myForm.fComments.$valid && myForm.fComments.$dirty" src="./img/checkmark-green.png" width="30px" height="30px">
+			<div class="form-field-invalid" ng-show="myForm.fComments.$invalid && myForm.fComments.$dirty" >
+			  <p>Please enter a valid comment.</p>
+			  <p>Comments must be more than 2 characters.</p>
+			</div>
+				
+			<br/>
+			<button class="btn btn-primary" ng-disabled="isUnchanged(fields)" ng-click="reset()">Reset</button>
+		  <button class="btn btn-primary" ng-disabled="myForm.$invalid || isUnchanged(fields)" ng-click="submit(user)">Submit</button>
+		</form>
+	</div>
+
+</div>
+<p>&nbsp;</p>
+<p style="color:#888">Your privacy is respected.  No cookies and/or tracking software are used.</p>
+<div class="clear"></div>
