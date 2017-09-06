@@ -1,1 +1,2 @@
-# wil-ng
+Wil Portfolio
+(built with AngularJS)
